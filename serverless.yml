@@ -1,0 +1,18 @@
+# serverless.yml
+---
+service: Python3Lambda
+frameworkVersion: '2'
+provider:
+  name: aws
+  runtime: python3.8
+  lambdaHashingVersion: 20201221
+  region: eu-west-1
+  stage: main
+functions:
+  hello:
+    handler: handler.main
+plugins:
+  - serverless-python-requirements
+custom:
+  pythonRequirements:
+    dockerizePip: non-linux
